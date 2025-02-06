@@ -1,2 +1,3 @@
 # automatically generated files
 pnpm-lock.yaml
+/src/app/db/migrations

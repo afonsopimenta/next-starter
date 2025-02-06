@@ -6,6 +6,7 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    DATABASE_URL: z.string(),
   },
   experimental__runtimeEnv: process.env,
   emptyStringAsUndefined: true,
