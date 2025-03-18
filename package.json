@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "format": "prettier --write . --cache",
     "format:check": "prettier --check . --cache",
     "lint": "next lint",
