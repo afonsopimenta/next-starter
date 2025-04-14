@@ -1,17 +1,17 @@
 {
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "next build --turbopack",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbopack",
     "format": "prettier --write . --cache",
     "format:check": "prettier --check . --cache",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "start": "next start",
+    "start": "next start --turbopack",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
