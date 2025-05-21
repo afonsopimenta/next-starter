@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.13.4",
+    "better-auth": "^1.2.8",
     "drizzle-orm": "^0.43.1",
     "jiti": "^2.4.2",
     "next": "15.4.0-canary.34",

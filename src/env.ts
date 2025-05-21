@@ -7,6 +7,8 @@ export const env = createEnv({
       .enum(["development", "test", "production"])
       .default("development"),
     DATABASE_URL: z.string(),
+    BETTER_AUTH_SECRET: z.string(),
+    BETTER_AUTH_URL: z.string(),
   },
   experimental__runtimeEnv: process.env,
   emptyStringAsUndefined: true,
