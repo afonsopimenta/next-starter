@@ -7,9 +7,8 @@ await jiti.import("./src/env.ts");
 const nextConfig = {
   experimental: {
     authInterrupts: true,
-    dynamicIO: true,
+    cacheComponents: true,
     ppr: true,
-    reactCompiler: true,
   },
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },

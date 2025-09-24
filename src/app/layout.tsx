@@ -1,6 +1,5 @@
 import "~/styles/globals.css";
 
-import { type ReactNode } from "react";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,11 +7,7 @@ export const metadata: Metadata = {
   description: "A starter template for bleeding-edge Next.js projects",
 };
 
-type RootLayoutProps = Readonly<{
-  children: ReactNode;
-}>;
-
-const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout = ({ children }: LayoutProps<"/">) => {
   return (
     <html lang="en">
       <body>{children}</body>

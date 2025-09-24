@@ -6,7 +6,6 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.config({
-    plugins: ["eslint-plugin-react-compiler"],
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
     rules: {
       "@typescript-eslint/consistent-type-imports": [
@@ -20,7 +19,6 @@ const eslintConfig = [
         "warn",
         { argsIgnorePattern: "^_" },
       ],
-      "react-compiler/react-compiler": "warn",
     },
   }),
 ];
