@@ -11,5 +11,8 @@ next-env.d.ts
 # env files
 .env
 
+# editor settings
+.vscode
+
 # misc
 .DS_Store
