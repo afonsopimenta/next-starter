@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "start": "next start --turbopack",
-    "typecheck": "next typegen && tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit",
+    "typegen": "next typegen"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.13.8",
