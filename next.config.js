@@ -8,7 +8,6 @@ const nextConfig = {
   experimental: {
     authInterrupts: true,
     cacheComponents: true,
-    ppr: true,
   },
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
