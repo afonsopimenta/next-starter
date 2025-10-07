@@ -7,38 +7,47 @@ export const usersTable = pgTable("users", {
   emailVerified: boolean().notNull().default(false),
   image: text(),
   createdAt: timestamp().notNull().defaultNow(),
-  updatedAt: timestamp().notNull().defaultNow(),
+  updatedAt: timestamp()
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => new Date()),
 });
 
 export const sessionsTable = pgTable("sessions", {
   id: text().primaryKey(),
-  expiresAt: timestamp().notNull(),
-  token: text().notNull().unique(),
-  createdAt: timestamp().notNull(),
-  updatedAt: timestamp().notNull(),
-  ipAddress: text(),
-  userAgent: text(),
   userId: text()
     .notNull()
     .references(() => usersTable.id, { onDelete: "cascade" }),
+  token: text().notNull().unique(),
+  expiresAt: timestamp().notNull(),
+  ipAddress: text(),
+  userAgent: text(),
+  createdAt: timestamp().notNull().defaultNow(),
+  updatedAt: timestamp()
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => new Date()),
 });
 
 export const accountsTable = pgTable("accounts", {
   id: text().primaryKey(),
-  accountId: text().notNull(),
-  providerId: text().notNull(),
   userId: text()
     .notNull()
     .references(() => usersTable.id, { onDelete: "cascade" }),
+  accountId: text().notNull(),
+  providerId: text().notNull(),
   accessToken: text(),
   refreshToken: text(),
-  idToken: text(),
   accessTokenExpiresAt: timestamp(),
   refreshTokenExpiresAt: timestamp(),
   scope: text(),
+  idToken: text(),
   password: text(),
-  createdAt: timestamp().notNull(),
-  updatedAt: timestamp().notNull(),
+  createdAt: timestamp().notNull().defaultNow(),
+  updatedAt: timestamp()
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => new Date()),
 });
 
 export const verificationsTable = pgTable("verifications", {
@@ -46,6 +55,9 @@ export const verificationsTable = pgTable("verifications", {
   identifier: text().notNull(),
   value: text().notNull(),
   expiresAt: timestamp().notNull(),
-  createdAt: timestamp().defaultNow(),
-  updatedAt: timestamp("updated_at").defaultNow(),
+  createdAt: timestamp().notNull().defaultNow(),
+  updatedAt: timestamp()
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => new Date()),
 });
